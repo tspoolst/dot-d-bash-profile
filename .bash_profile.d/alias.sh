@@ -1,0 +1,22 @@
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias cd.='pwd'
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias lw="fn_lw"
+function fn_lw {
+  if which $1 >/dev/null 2>&1 ; then
+    ls -l `which $1`
+  else
+    echo "file not found"
+  fi
+}
+alias tree='tree -C'
+alias less='less -R -M -i'
+alias grep='grep --color=auto'
+alias sdiff='sdiff -W -w ${COLUMNS}'
+alias np='nmap -sP -PE -n'

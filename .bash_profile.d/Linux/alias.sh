@@ -1,0 +1,6 @@
+alias ls='ls --color=auto'
+alias ll='ls -l --color=auto --time-style=long-iso'
+alias lh='ls -l -h --color=auto --time-style=long-iso'
+alias lt='ls -l -t --color=auto --time-style=long-iso'
+alias l.='ls -d .* --color=auto'
+alias ns='netstat -nlptu'

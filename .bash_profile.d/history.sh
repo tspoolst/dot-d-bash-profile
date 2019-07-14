@@ -1,0 +1,3 @@
+export HISTCONTROL=erasedups
+export HISTFILESIZE=200000
+export HISTSIZE=100000

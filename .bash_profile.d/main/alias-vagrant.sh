@@ -9,8 +9,8 @@ function vroot {
   lc_host="$1"
   shift
   if [[ -n "$1" ]] ; then
-    vagrant ssh ${lc_host} -c "sudo bash -c \"$@\""
+    vagrant ssh ${lc_host} -c "sudo -i bash -c \"$@\""
   else
-    vagrant ssh ${lc_host} -c "sudo bash -l"
+    vagrant ssh ${lc_host} -c "sudo -i bash -l"
   fi
 }

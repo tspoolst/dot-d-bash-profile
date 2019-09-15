@@ -16,7 +16,7 @@ function fn_lw {
   fi
 }
 alias tree='tree -C'
-alias less='less -R -M -i'
+alias less='less -R -M -i -C -j 10 -# 4'
 alias grep='grep --color=auto'
 alias sdiff='sdiff -W -w ${COLUMNS}'
 alias np='nmap -sP -PE -n'

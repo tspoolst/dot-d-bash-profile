@@ -15,3 +15,6 @@ function gca {
     fi
   )
 }
+alias gstat='git status'
+alias gdir='git rev-parse --show-toplevel'
+alias gurl='git config --get remote.origin.url'

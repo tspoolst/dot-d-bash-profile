@@ -2,6 +2,7 @@ alias vup='vagrant up'
 alias vhalt='vagrant halt'
 alias vdel='vagrant destroy -f'
 alias vpro='vagrant provision'
+alias vproa='vagrant provision --provision-with ansible'
 alias vssh='vagrant ssh'
 alias vstat='vagrant status'
 function vroot {

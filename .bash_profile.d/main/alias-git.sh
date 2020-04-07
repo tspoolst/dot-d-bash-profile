@@ -1,4 +1,6 @@
 # show commits in currert branch
+alias gd='git diff'
+alias gdc='git diff --cached'
 alias gsc='git log --pretty=format:"%h - %an, %ar : %s"'
 alias gpas="find . -name '.git'|sed -e 's/\.git$//g'|xargs -I{} sh -c 'echo -----{}; cd {}; git pull'"
 alias gcas="find . -name '.git'|sed -e 's/\.git$//g'|xargs -I{} sh -c 'echo -----{}; cd {}; git st'"
@@ -15,6 +17,16 @@ function gca {
     fi
   )
 }
+
 alias gstat='git status'
 alias gdir='git rev-parse --show-toplevel'
 alias gurl='git config --get remote.origin.url'
+
+function gtagbump {
+  typeset lc_tagLatest
+  lc_tagLatest=$(git tag | sort -V | tail -n 1)
+  git push --delete origin ${lc_tagLatest}
+  git tag -d ${gl_tagLatest}
+  git tag ${gl_tagLatest}
+  git push -v --tags
+}

@@ -3,3 +3,5 @@ function dclean {
   docker images | grep "^<none>" | (while read a a a b;do docker rmi $a;done)
   docker image prune -f
 }
+alias dimage="docker images --no-trunc --format='{{.Repository}}:{{.Tag}}' | sort"
+

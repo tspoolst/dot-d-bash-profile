@@ -22,11 +22,11 @@ alias gstat='git status'
 alias gdir='git rev-parse --show-toplevel'
 alias gurl='git config --get remote.origin.url'
 
-function gtagbump {
+function gtagshift {
   typeset lc_tagLatest
   lc_tagLatest=$(git tag | sort -V | tail -n 1)
   git push --delete origin ${lc_tagLatest}
-  git tag -d ${gl_tagLatest}
-  git tag ${gl_tagLatest}
+  git tag -d ${lc_tagLatest}
+  git tag ${lc_tagLatest}
   git push -v --tags
 }

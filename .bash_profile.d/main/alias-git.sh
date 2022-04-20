@@ -1,4 +1,5 @@
 # show commits in currert branch
+alias gclean='git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 -c gc.rerereresolved=0 -c gc.rerereunresolved=0 -c gc.pruneExpire=now gc "$@"'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gsc='git log --pretty=format:"%h - %an, %ar : %s"'

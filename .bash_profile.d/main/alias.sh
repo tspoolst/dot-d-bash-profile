@@ -7,8 +7,6 @@ alias ....='cd ../../..'
 alias cd.='pwd'
 alias cd..='cd ..'
 alias cd...='cd ../..'
-alias la='ls -la --color=auto'
-alias ll='ls -l --color=auto'
 alias lw='fn_lw'
 function fn_lw {
   if which $1 >/dev/null 2>&1 ; then

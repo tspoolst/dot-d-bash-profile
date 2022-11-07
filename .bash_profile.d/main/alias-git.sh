@@ -6,7 +6,7 @@ alias gsc='git log --pretty=format:"%h - %an, %ar : %s"'
 alias gpas="find . -name '.git'|sed -e 's/\.git$//g'|xargs -I{} sh -c 'echo -----{}; cd {}; git pull'"
 alias gcas="find . -name '.git'|sed -e 's/\.git$//g'|xargs -I{} sh -c 'echo -----{}; cd {}; git st'"
 
-alias gta='git branch -r | grep -v "\->" | while read remote; do git branch | grep -q "${remote#origin/}$" || git branch --track "${remote#origin/}" "$remote"; done'
+alias gta='git branch -r | grep -v "\->" | (while read remote; do git branch | grep -q "${remote#origin/}$" || git branch --track "${remote#origin/}" "$remote"; done)'
 alias gpa='gta;git fetch -v --all;git fetch -v --all --tags;git pull -v --all;git pull -v --all --tags'
 function gca {
   (

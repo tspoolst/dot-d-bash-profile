@@ -31,6 +31,17 @@ echo;grep -q '. ~/.bash_profile.d/main.sh' .bashrc && echo "dot-d-bash-profile a
 #open a fresh cygwin terminal and enjoy.
 ```
 
+### git-bash install:
+```
+mkdir -pv git
+powershell -c '[Net.ServicePointManager]::SecurityProtocol = "tls12";Invoke-WebRequest "https://github.com/tspoolst/dot-d-bash-profile/archive/refs/heads/master.zip" -OutFile "dot-d-bash-profile.zip" -UseBasicParsing'
+(cd git;unzip -o ../dot-d-bash-profile.zip) && rm -vf dot-d-bash-profile.zip
+ln -svfd git/dot-d-bash-profile-master/.bash_profile.d ${HOME}/
+[[ ! -e .bash_profile ]] && echo -e 'test -f ~/.profile && . ~/.profile\ntest -f ~/.bashrc && . ~/.bashrc' > .bash_profile
+echo;grep -q '. ~/.bash_profile.d/main.sh' .bashrc 2>/dev/null && echo "dot-d-bash-profile already added." || { echo "adding dot-d-bash-profile.";echo '. ~/.bash_profile.d/main.sh' >> .bashrc; };echo "to see the changes open a new terminal.";echo
+#open a fresh git-bash terminal and enjoy.
+```
+
 ### your private/custom stuff:
 put those files in .bash_profile.d/user/ and they will be ignored by git.
 

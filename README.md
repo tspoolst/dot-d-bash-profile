@@ -25,11 +25,17 @@ if not exist c:\cygwin64\setup-x86_64.exe mv setup-x86_64.exe c:\cygwin64\setup-
 c:\cygwin64\bin\bash.exe -l
 #install dot-d-bash-profile
 mkdir -p git
-wget https://github.com/tspoolst/dot-d-bash-profile/archive/refs/heads/master.zip -qO-  | bsdtar -xf- -C git
+wget https://github.com/tspoolst/dot-d-bash-profile/archive/refs/heads/master.zip -qO- | bsdtar -xf- -C git
 ln -svfd git/dot-d-bash-profile-master/.bash_profile.d ${HOME}/
-grep -q '. ~/.bash_profile.d/main.sh' .bash_profile && echo "dot-d-bash-profile already added.  to see the changes open a new terminal" || echo '. ~/.bash_profile.d/main.sh' >> .bash_profile
+echo;grep -q '. ~/.bash_profile.d/main.sh' .bashrc && echo "dot-d-bash-profile already added." || { echo "adding dot-d-bash-profile.";echo '. ~/.bash_profile.d/main.sh' >> .bashrc; };echo "to see the changes open a new terminal.";echo
 #open a fresh cygwin terminal and enjoy.
 ```
 
 ### your private/custom stuff:
 put those files in .bash_profile.d/user/ and they will be ignored by git.
+
+### other usefull commands:
+```
+#pip install
+python <(wget https://bootstrap.pypa.io/get-pip.py -qO-)
+```

@@ -47,6 +47,20 @@ put those files in .bash_profile.d/user/ and they will be ignored by git.
 
 ### other usefull commands:
 ```
+#cygwin apt-cgy install
+lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
+install apt-cyg /bin
+
 #pip install
 python <(wget https://bootstrap.pypa.io/get-pip.py -qO-)
+
+#cygwin groovy install
+##close and open a new terminal for each install command
+curl -s get.sdkman.io | bash
+sdk install java
+sdk install gradle
+sdk install groovy
+javac --version
+gradle -v
+groovy --version
 ```

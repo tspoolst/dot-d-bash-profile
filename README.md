@@ -19,7 +19,7 @@ if exist c:\cygwin64 cd c:\cygwin64
 ::download cygwin setup tool
 powershell -c  [Net.ServicePointManager]::SecurityProtocol = 'tls12';Invoke-WebRequest "https://www.cygwin.com/setup-x86_64.exe" -OutFile "setup-x86_64.exe" -UseBasicParsing
 ::do a base install of cygwin
-setup-x86_64.exe -q -d -P ncdu,mc,tree,wget,curl,git,jq,python3,bsdtar,zip,unzip --site https://mirror.steadfast.net/cygwin/ -R c:\cygwin64 -l c:\cygwin64\packages
+setup-x86_64.exe -q -d -P bsdtar,curl,git,jq,mc,ncdu,procps-ng,python3,tree,unzip,wget,zip --site https://mirror.steadfast.net/cygwin/ -R c:\cygwin64 -l c:\cygwin64\packages
 ::move cygwin setup tool to c:\cygwin64 if this is a fresh cygwin install
 if not exist c:\cygwin64\setup-x86_64.exe mv setup-x86_64.exe c:\cygwin64\setup-x86_64.exe
 c:\cygwin64\bin\bash.exe -l

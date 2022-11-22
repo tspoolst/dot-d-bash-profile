@@ -50,7 +50,7 @@ put those files in .bash_profile.d/user/ and they will be ignored by git.
 #cygwin apt-cgy install
 wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg -qO- > apt-cyg
 install apt-cyg /bin
-rm apt-cyg
+rm -vf apt-cyg
 
 #pip install
 python <(wget https://bootstrap.pypa.io/get-pip.py -qO-)

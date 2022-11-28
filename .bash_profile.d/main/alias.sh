@@ -13,7 +13,7 @@ alias lw='fn_lw'
 # shows the full path to a executable.
 function fn_lw {
   if which $1 >/dev/null 2>&1 ; then
-    ls -l `which $1`
+    ls -l "$(which $1)"
   else
     echo "file not found"
   fi
